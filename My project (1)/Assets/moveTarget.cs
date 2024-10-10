@@ -9,8 +9,10 @@ public class moveTarget : MonoBehaviour
 
     private Vector3 startPosition;
     public bool moveInXDirection = true;
+    private GameOver gameover;
     void Start()
     {
+        // gameover = GameObject.Find("Main Camera").GetComponent<GameOver>();
         startPosition = transform.position; //save start position
     }
 
@@ -29,5 +31,6 @@ public class moveTarget : MonoBehaviour
 
     private void OnCollisionEnter(Collision other){
         Destroy(this.gameObject); 
+        // gameover.decreaseTargets();
     }
 }
